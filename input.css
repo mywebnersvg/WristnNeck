@@ -1,0 +1,466 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans", serif;
+  background-color: #16423C;
+  padding: 0 40px;
+  @media (max-width:768px) {
+    padding: 0 20px;
+  }
+
+}
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.navMain {
+  background-color: #E9EFEC;
+  position: sticky;
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 0;
+  /* box-shadow: #fff7003b 0px 20px 24px -15px; */
+}
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  @media (max-width:640px) {
+   padding: 0 18px;
+  }
+}
+.wristLogo {
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.sidenav {
+  height: fit-content;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 84px;
+  left: -20%;
+  background-color: #6A9C89;
+  overflow-x: hidden;
+  transition: 0.5s;
+  border-radius: 12px;
+  padding: 28px 0;
+  opacity: 0.8;
+  backdrop-filter: blur(44px);
+  transition: all 0.5s ease;
+}
+
+.sidenav a {
+  padding: 8px 20px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.sidenav a:hover {
+ scale: 1.1;
+ font-weight: 700;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: -3px;
+  right: 10px;
+  font-size: 36px;
+  margin-left: 50px;
+  padding: 10px 20px;
+  margin-top: 0;
+}
+.menuIcon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  @media (max-width:640px) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+.iconNav {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    @media (max-width:640px) {
+        width: 18px;
+        height: 18px;
+      }
+}
+.iconContainer {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    @media (max-width:768px) {
+        gap: 8px;
+    }
+}
+.modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+  }
+  .modal {
+    padding: 0px;
+  }
+  .modal input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px 20px;
+    margin: 17px 0;
+    display: inline-block;
+    border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 35px;
+    font-size: 16px;
+  }
+  
+  /* Set a style for all buttons */
+  .modal .Loginbutton {
+    background-color: black;
+    color: white;
+    padding: 15px 20px;
+    margin: 17px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 35px;
+    width: 100%;
+    max-width: 50%;
+    font-size: 16px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    @media (max-width:640px) {
+        width: 100%;
+    }
+  }
+  
+  .modal .Loginbutton:hover {
+    scale: 1.1;
+  }
+  
+  /* Extra styles for the cancel button */
+  .modal .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  /* Center the image and position the close button */
+  .modal .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+  }
+  .modal form {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  /* Modal Content/Box */
+  .modal .modal-content {
+    background-color: #E9EFEC;
+    width: 50%; /* Could be more or less, depending on screen size */
+    border-radius: 12px;
+    padding: 20px 0;
+    border-radius: 12px;
+    box-shadow: 5px 20px 50px #000;
+    margin: 0 auto;
+    position: relative;
+    @media (max-width:640px) {
+        width: calc(100% - 8%);
+    }
+    @media (min-width:641px) and (max-width:1024px) {
+        width: calc(100% - 20%);
+    }
+  }
+  
+  /* The Close Button (x) */
+  .modal .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .modal .close:hover,
+  .modal .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+  /* Add Zoom Animation */
+  .modal .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    .modal span.psw {
+       display: block;
+       float: none;
+    }
+    .modal .cancelbtn {
+       width: 100%;
+    }
+  }
+  .modal .formContainer {
+    width: 100%;
+    max-width: calc(100% - 9%);
+    margin: 0 auto;
+  }
+  .modal .formContainer label {
+    font-size: 20px;
+  }
+  .createAccount {
+    text-align: center;
+  }
+  .createAccount a {
+    margin-top: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    transition: all 0.2s ease; 
+    text-align: center;
+  }
+  .createAccount:hover {
+    text-decoration: underline;
+  }
+  .modal2 {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+  }
+  .modal2 {
+    padding: 0px;
+  }
+  .modal2 input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px 20px;
+    margin: 17px 0;
+    display: inline-block;
+    border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 35px;
+    font-size: 16px;
+  }
+  
+  /* Set a style for all buttons */
+  .modal2 .Loginbutton {
+    background-color: black;
+    color: white;
+    padding: 15px 20px;
+    margin: 17px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 35px;
+    width: 100%;
+    max-width: 50%;
+    font-size: 16px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    @media (max-width:640px) {
+        width: 100%;
+    }
+  }
+  
+  .modal2 .Loginbutton:hover {
+    scale: 1.1;
+  }
+  
+  /* Extra styles for the cancel button */
+  .modal2 .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  /* Center the image and position the close button */
+  .modal2 .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+  }
+  .modal2 form {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal2 span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  /* Modal Content/Box */
+  .modal2 .modal-content {
+    background-color: #E9EFEC;
+    width: 50%; /* Could be more or less, depending on screen size */
+    border-radius: 12px;
+    padding: 20px 0;
+    border-radius: 12px;
+    box-shadow: 5px 20px 50px #000;
+    margin: 0 auto;
+    position: relative;
+    @media (max-width:640px) {
+        width: calc(100% - 8%);
+    }
+    @media (min-width:641px) and (max-width:1024px) {
+        width: calc(100% - 20%);
+    }
+  }
+  
+  /* The Close Button (x) */
+  .modal2 .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .modal2 .close:hover,
+  .modal2 .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+  /* Add Zoom Animation */
+  .modal2 .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    .modal2 span.psw {
+       display: block;
+       float: none;
+    }
+    .modal2 .cancelbtn {
+       width: 100%;
+    }
+  }
+  .modal2 .formContainer {
+    width: 100%;
+    max-width: calc(100% - 9%);
+    margin: 0 auto;
+  }
+  .modal2 .formContainer label {
+    font-size: 20px;
+  }
+  .createAccount {
+    text-align: center;
+  }
+  .createAccount a {
+    margin-top: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    transition: all 0.2s ease; 
+    text-align: center;
+  }
+  .createAccount:hover {
+    text-decoration: underline;
+  }
+  .watchImg {
+    height: auto;
+    width: 100%;
+    max-width: 297px;
+    position: absolute;
+    top: -167px;
+    rotate: -13deg;
+    left: -198px;
+    z-index: -1;
+  }
+  .necklaceImg {
+    position: absolute;
+    bottom: -94px;
+    width: 182%;
+    max-width: 222px;
+    rotate: 328deg;
+    right: -153px;
+    height: auto;
+    z-index: -1;
+  }
+  
+  .modalMainContent {
+    padding: 0 20px;
+  }
