@@ -3,15 +3,10 @@ body {
   padding: 0;
   font-family: "Hind Siliguri", serif;
   background-color: black;
-  padding: 0 40px;
-  @media (max-width:768px) {
-    padding: 0 20px;
-  }
-
 }
 .container {
   width: 100%;
-  max-width: 100%;
+  max-width: 95%;
   margin: 0 auto;
 }
 .navMain {
@@ -23,9 +18,6 @@ body {
   padding: 0;
   color: #FFFFFF;
   box-shadow: 0 2px 19px -2px #575757;
-}
-.menuContainer {
-  width: 40%;
 }
 .navContainer {
   display: flex;
@@ -118,7 +110,6 @@ body {
 .iconContainer {
     display: flex;
     gap: 20px;
-    width: 40%;
     justify-content: end;
     align-items: center;
     @media (max-width:768px) {
@@ -682,4 +673,293 @@ body {
   font-size: 50px;
   margin-bottom: 40px;
   color: white;
+}
+.banner {
+  background-color: white;
+  text-align: center;
+  padding: 4px 20px;
+}
+.banner p {
+  color: black;
+  font-weight: 500;
+  font-size: 12px;
+  position: relative;
+  animation: bannerText 0.8s ease alternate;
+  margin: 0;
+}
+@keyframes bannerText {
+  0% {
+    top: 40px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.mainHomeContainer {
+  display: flex;
+  margin-top: 20px;
+  position: relative;
+}
+.homeTextContainer {
+  position: absolute;
+  top: 42%;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+.mainHeading {
+  font-size: 60px;
+  padding: 0 20px;
+  font-weight: 400;
+  color: black;
+  font-family: "Abril Fatface", serif;
+  margin: 0;
+  @media (min-width:768px) and (max-width: 1024px) {
+    font-size: 40px;
+  }
+  @media (max-width:768px) {
+    font-size: 24px;
+  }
+}
+
+.containerHomeMainImages {
+  margin-top: 20px;
+  padding: 0 20px;
+  @media (max-width:768px) {
+    margin-top: 10px;
+  }
+}
+
+ .containerHomeMainImages h3 {
+  font-size: 24px;
+  font-weight: 400;
+  color: black;
+  margin: 0px;
+  @media (min-width:768px) and (max-width: 1024px) {
+    font-size: 18px;
+  }
+  @media (max-width:768px) {
+    font-size: 16px;
+  }
+}
+.imagesContainer {
+  width: 60%;
+  position: relative;
+  display: flex;
+  
+}
+.homeImg {
+  width: 33.3333%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 500px;
+  min-height: 350px;
+}
+.shopNowBtn {
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  background-color: #FFD700;
+  transition: all 0.5s ease;
+  border: 1px solid #FFD700;
+  margin-top: 20px;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.shopNowBtn:hover {
+  background-color: transparent;
+}
+.acceroiesContainer {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 50px;
+    @media (min-width:640px) and (max-width:1024px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 30px;
+    }
+    @media (max-width:768px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+}
+.acessorieImg {
+  width: 100%;
+  height: 325px;
+  position: relative;
+}
+.acessorieImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.accesorieHeading {
+  font-size: 40px;
+  font-weight: 600;
+  color: white;
+}
+.accessorieName {
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+  text-transform: capitalize;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 290px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: left;
+}
+.accessoriePageContainer {
+  padding: 0 40px;
+  @media (max-width:768px) {
+    padding: 0 20px;
+  }
+}
+.accessoriePrice {
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+  margin: 0;
+}
+.discountPrice {
+position: absolute;
+bottom: 20px;
+display: flex;
+gap: 4px;
+background-color: #FFD700;
+padding: 12px;
+border-top-right-radius: 60px;
+border-bottom-right-radius: 60px;
+color: black;
+font-size: 18px;
+}
+.accessorieDiscount {
+  color: black;
+  margin: 0;
+  font-size: 18px;
+}
+.accessorieDetailContainer {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 40px;
+  @media (max-width:960px) {
+    flex-wrap: wrap;
+  }
+}
+.detailAcceroieName {
+  font-size: 50px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  margin-bottom: 20px;
+}
+.detailAccresoriePrice {
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+  margin: 0;
+}
+.accrsorieOff {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.detailAcceories {
+  width: 50%;
+  @media (max-width:960px) {
+    width: 100%;
+  }
+}
+
+.backHomeButton {
+  background-color: #FFD700;
+  padding: 14px 20px;
+  border: 1px solid #FFD700;
+  font-size: 20px;
+  font-weight: 400;
+  color: black;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+}
+.backHomeButton:hover {
+  background-color: transparent;
+  color: #FFD700;
+}
+.accessorieDetailContainer .swiper {
+  width: 50%;
+  height: 600px;
+  max-width: 100%;
+  @media (max-width:960px) {
+    width: 100%;
+  }
+}
+.accessorieDetailPageContainer {
+  padding: 60px 40px;
+  @media (min-width:768px) and (max-width:1024px) {
+    padding: 40px;
+  }
+  @media (max-width:768px) {
+    padding: 40px 20px;
+  }
+}
+.swiper-button-next, .swiper-button-prev {
+  color: #FFD700 !important;
+  cursor: pointer;
+}
+.swiper-pagination-bullet-active {
+  background-color: #FFD700 !important;
+}
+.inputType {
+  border: 1px solid #FFD700;
+  border-radius: 12px;
+  background-color: transparent;
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: 400;
+  color: #FFD700;
+  padding: 14px 20px;
+  outline: none;
+}
+.selectColorMain {
+  display: flex;
+  gap: 14px;
+  background-color: white;
+  padding: 8px;
+  border-radius: 10px;
+  align-items: center;
+}
+.goldenColor {
+  background-color: #FFD700;
+}
+.blackColor {
+  background-color: #000;
+}
+.silverColor {
+  background-color: silver;
+}
+.selectColor {
+  width: 20px;
+  height: 20px;
+}
+.selectColorContainer{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 20px;
+}
+.selectColorContainer label {
+  font-size: 24px;
+  color: #FFD700;
+}
+.selected {
+  border: 2px solid red; /* Highlight the selected color */
 }

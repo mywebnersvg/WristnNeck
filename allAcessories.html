@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wrist&Neck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumar+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./input.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Kumar+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="accessoriePageContainer">
+    <h1 class="accesorieHeading">
+        All Acessories
+    </h1>
+    
+    <div id="allProducts" class="acceroiesContainer"></div>
+   
+    
+    <!-- Template for Product Card -->
+    <template id="productCardTemplate">
+      <button type="button" style="background-color: transparent; border: none;">        
+        <div class="acessorieImg"> <div class="discountPrice"> <p class="accessorieDiscount"></p> off </div>  </div>
+        <p class="accessorieName"></p>
+        <span style="display: flex; align-items: center; font-size:20px; color: white; gap:12px">
+        PKR <p class="accessoriePrice"></p></span>
+       
+      </button>
+    </template>
+</div>
+
+<script src="./allAcessories.js"></script>
+</body>
+</html>

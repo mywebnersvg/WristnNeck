@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="./input.css">
+    
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <style>
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="accessorieDetailPageContainer">
+        <button onclick="goBack()" class="backHomeButton">Go Back</button>
+        <div class="accessorieDetailContainer">
+            <!-- Swiper Slider -->
+            <div class="swiper">
+                <div class="swiper-wrapper" id="productImages"></div>
+                <!-- Pagination & Navigation -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+            <div class="detailAcceories">
+                <h1 id="productName" class="detailAcceroieName"></h1>
+                <p class="detailAccresoriePrice"><strong style="color: #FFD700;">Price- </strong> PKR <span id="productPrice"></span></p>
+                <p class="accrsorieOff"><span id="productDiscount"></span></p>
+                <form>
+                    <input type="number" id="quantity" placeholder="Quantity" class="inputType">
+                    <div class="selectColorContainer">
+                        <label>Select Color -</label>
+                        <div class="selectColorMain">
+                            <div class="goldenColor selectColor"></div>
+                            <div class="blackColor selectColor"></div>
+                            <div class="silverColor selectColor"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Swiper.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const product = JSON.parse(localStorage.getItem("selectedProduct"));
+    
+            if (product) {
+                document.getElementById("productName").textContent = product.name;
+                document.getElementById("productPrice").textContent = product.price;
+                document.getElementById("productDiscount").textContent = product.discount ? `OFF ${product.discount}%` : "";
+    
+                const imageGallery = document.getElementById("productImages");
+                imageGallery.innerHTML = ""; // Clear previous images
+    
+                if (product.images && product.images.length > 0) {
+                    product.images.forEach(imageSrc => {
+                        const slide = document.createElement("div");
+                        slide.className = "swiper-slide";
+                        slide.innerHTML = `<img src="${imageSrc}" alt="${product.name}">`;
+                        imageGallery.appendChild(slide);
+                    });
+    
+                    // Initialize Swiper
+                    new Swiper('.swiper', {
+                        loop: true,
+                        spaceBetween: 10,
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                        },
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                        autoplay: {
+                            delay: 3000,
+                            disableOnInteraction: false,
+                        },
+                    });
+                } else {
+                    imageGallery.innerHTML = "<p>No Image Available</p>";
+                }
+            }
+    
+            // Color Selection Logic
+            const colorOptions = document.querySelectorAll(".selectColor");
+            const selectedColorText = document.getElementById("selectedColorText");
+            let selectedColor = "";
+    
+            colorOptions.forEach(color => {
+                color.addEventListener("click", () => {
+                    // Remove 'selected' class from all
+                    colorOptions.forEach(c => c.classList.remove("selected"));
+    
+                    // Add 'selected' class to the clicked one
+                    color.classList.add("selected");
+    
+                    // Update selected color text
+                    selectedColor = color.getAttribute("data-color");
+                    selectedColorText.textContent = selectedColor.charAt(0).toUpperCase() + selectedColor.slice(1);
+                });
+            });
+        });
+    
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+    
+</body>
+</html>
