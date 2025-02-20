@@ -22,13 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("isLoggedIn", "true");
       alert("Login successful!");
       // Redirect to index.html
-      window.location.href = "./index.html";
+      window.location.href = "./index2.html";
     } else if (email === storedEmail && password === storedPassword) {
       // Update login status in localStorage
       localStorage.setItem("isLoggedIn", "true");
       alert("Login successful!");
       // Redirect to index2.html for other valid credentials
-      window.location.href = "./index2.html";
+      window.location.href = "./index.html";
     } else {
       alert("Invalid email or password!");
     }
