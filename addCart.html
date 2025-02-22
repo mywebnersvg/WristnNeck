@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Cart Page -->
+<div class="cartContainer">
+    <h1>Your Cart</h1>
+    <div id="cartItems"></div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const cartItemsContainer = document.getElementById("cartItems");
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+    } else {
+        const cartList = document.createElement("ul");
+        cart.forEach(item => {
+            const listItem = document.createElement("li");
+            listItem.textContent = `${item.name} - PKR ${item.price} x ${item.quantity}`;
+            cartList.appendChild(listItem);
+        });
+        cartItemsContainer.appendChild(cartList);
+    }
+});
+</script>
+
+</body>
+</html>

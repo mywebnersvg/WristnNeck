@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (productData.length > 0) {
       productData.forEach((product, index) => {
-        const { name, price, images, discount, category } = product;
+        const { name, price, images, discount, category, description } = product;
         const productCard = productCardTemplate.content.cloneNode(true);
 
         // Populate the product card
@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
         productCard.querySelector(".product-price").textContent = price;
         const discountElement = productCard.querySelector(".product-discount");
         discountElement.textContent = discount ? `${discount}%` : "No discount";
+        productCard.querySelector(".product-description").textContent = description || "No description available";
 
         const imageContainer = productCard.querySelector(".image-container");
         images.forEach((image) => {
@@ -80,15 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
         // Add delete functionality
         const deleteButton = productCard.querySelector("svg");
         deleteButton.addEventListener("click", () => {
-          console.log("Delete button clicked"); // Debugging
-        
           const updatedProducts = productData.filter((_, i) => i !== index);
-          
-          // Update the productData reference
           productData.length = 0;
           productData.push(...updatedProducts);
-        
-          localStorage.setItem("products", JSON.stringify(productData));
+          localStorage.setItem("products", JSON.stringify(updatedProducts));
           displayProducts(); // Refresh the display
         });
 
@@ -112,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial display of products
   displayProducts();
 });
+
 
 
 
